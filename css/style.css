@@ -91,8 +91,8 @@ form {
 
 .search-bar {
     border: var(--secondary-color) 1px solid;
-    outline: none;
     width: min(100%,220px);
+    outline: none;
 }
 
 .search-bar[placeholder] {
@@ -104,26 +104,80 @@ form {
 form button {
     background: var(--primary-color);
     color: var(--white);
-    border: none;
     padding: 16px;
+    font-weight: inherit;
+    border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     cursor: pointer;
-    font-weight: inherit;
 }
 
 .search-icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 16px;
     background: var(--secondary-color);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    padding: 16px;
 }
 
 .search-button-small {
     display: none;
+}
+
+.filtres-container {
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+}
+
+.filtres-container h3 {
+    margin-right: 10px;
+}
+
+.filtre {
+    position: relative;
+    display: inline-block;
+    margin: 16px;
+    border: 3px solid var(--secondary-color);
+    border-radius: 20px;
+    padding: 12px;
+    padding-left: 45px;
+    font-weight: bold;
+}
+
+.filtre i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -8px;
+    top: -2px;
+    bottom: -2px;
+    min-width: 45px;
+    color: var(--primary-color);
+    background: var(--primary-color-light);
+    border-radius: 50%; 
+}
+
+.search-info {
+    display: flex;
+    margin: 24px 0;
+}
+
+.search-info p {
+    align-self: flex-start;
+    margin: 5px 0 0 5px;
+}
+
+.search-info i {
+    align-self: flex-start;
+    color: var(--primary-color);
+    font-size: 14px;
+    padding:5px 10px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 50%;
 }
 
 /* 6 - Section: Hébérgement */
@@ -200,6 +254,15 @@ form button {
         display: block;
         border-radius: 10px;
         transform: translateX(-10px);
+    }
+
+    .filtres-container h3 {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .filtre {
+        margin: 8px;
     }
 
 }
