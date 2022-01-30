@@ -89,12 +89,13 @@ form {
     margin: 30px 0;
 }
 
-form input {
+.search-bar {
     border: var(--secondary-color) 1px solid;
     outline: none;
+    width: min(100%,220px);
 }
 
-form input[placeholder] {
+.search-bar[placeholder] {
     color: inherit;
     font-weight: inherit;
     padding-left: 16px;
