@@ -18,6 +18,7 @@
     --primary-color: #0065FC;
     --primary-color-light: #DEEBFF;
     --secondary-color: #F2F2F2;
+    --white: #FFFFFF;
 }
 
 /* 2 - HTML et body */
@@ -54,6 +55,10 @@ nav {
     display: flex;
 }
 
+h1, h2 {
+    font-size: 22px;
+}
+
 /* 4 - Header */
 
 header {
@@ -78,6 +83,47 @@ header a:focus {
 
 /* 5 - Section: Top */
 
+form {
+    display: flex;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+form input {
+    border: var(--secondary-color) 1px solid;
+    outline: none;
+}
+
+form input[placeholder] {
+    color: inherit;
+    font-weight: inherit;
+    padding-left: 16px;
+}
+
+form button {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 16px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    cursor: pointer;
+    font-weight: inherit;
+}
+
+.search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--secondary-color);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 16px;
+}
+
+.search-button-small {
+    display: none;
+}
 
 /* 6 - Section: Hébérgement */
 
@@ -112,6 +158,14 @@ header a:focus {
         margin-top: 20px;
         width: 100%;
     }
+
+    section {
+        margin: 16px;
+    }
+
+    h1, h2 {
+        margin: 24px 0;
+    }
     
     /*  Mobile - Header */
 
@@ -133,6 +187,18 @@ header a:focus {
         border-top: none;
         border-bottom: 3px solid var(--primary-color);
         color: var(--primary-color);
+    }
+
+    /* Mobile - Section: Top */
+
+    .search-button-large {
+        display: none;
+    }
+
+    .search-button-small {
+        display: block;
+        border-radius: 10px;
+        transform: translateX(-10px);
     }
 
 }
