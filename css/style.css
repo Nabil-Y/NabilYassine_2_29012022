@@ -505,11 +505,6 @@ footer li:hover {
     }
 
     /* Mobile - Balises générales */
-    
-    nav {
-        margin-top: 16px;
-        width: 100%;
-    }
 
     section {
         margin: 16px;
@@ -522,9 +517,14 @@ footer li:hover {
     /*  Mobile - Header */
 
     header {
-        margin-top: 20px;
+        margin: 20px 0;
         flex-direction: column;
         justify-content: center;
+    }
+
+    header nav {
+        margin-top: 16px;
+        width: 100%;
     }
 
     header ul {
