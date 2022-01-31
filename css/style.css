@@ -46,7 +46,6 @@ img {
 }
 
 a {
-    display: block;
     color: inherit;
     text-decoration: none;
 }
@@ -302,7 +301,7 @@ aside :last-child {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     width: 33%;
-    aspect-ratio: 1;
+    aspect-ratio: 1 / 1;
     min-height: 140px;
 }
 
@@ -327,6 +326,64 @@ aside :last-child {
 
 
 /* 7 - Section: Activités */
+
+#activites {
+    padding: 30px 0;
+}
+
+#activites img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    max-height: 350px;
+    object-fit: cover;
+}
+
+#activites h4 {
+    padding: 16px;
+    margin: 0;
+}
+
+.activites-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.activites-column {
+    width: 25%;
+    margin-right: 32px;
+}
+
+.activites-column :last-child {
+    margin-bottom: 0;
+}
+
+.activites-card {
+    max-height: 400px;
+    margin-bottom: 32px;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+}
+
+.ac1, .ac4 {
+    height: 100%;
+}
+
+.ac1 img, .ac4 img {
+    height: 87%;
+}
+
+.ac2 img, .ac6 img {
+    height: 160px;
+    width: 100%;
+}
+
+.ac3 img, .ac5 img {
+    height: 100px;
+    width: 100%;
+}
+
+
 
 
 /* 8 - Footer */
@@ -371,6 +428,22 @@ aside :last-child {
         border-top-right-radius: 20px;
         height: 100px;
         width: 100%;
+    }
+
+    /* Tablette - Section: Activités */
+
+    .activites-container {
+        flex-wrap: wrap;
+    }
+
+    .activites-column {
+        order: 1;
+        width: 45%;
+        margin-bottom: 32px;
+    }
+
+    .column3 {
+        order: 2;
     }
 
 }
@@ -484,6 +557,34 @@ aside :last-child {
         width: 40%;
         height: 100%;
         max-height: 140px;
+    }
+
+    /* Mobile - Section: Activités */
+
+    #activites {
+        padding: 0;
+    }
+
+    .activites-column {
+        order: 1;
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 32px;
+    }
+    
+    .ac1 img, 
+    .ac2 img, 
+    .ac3 img, 
+    .ac4 img, 
+    .ac5 img, 
+    .ac6 img {
+        height: 100%;
+        width: 100%;
+        aspect-ratio: 2 / 1;
+    }
+
+    .ac1, .ac4 {
+        height: auto;
     }
 
 }
