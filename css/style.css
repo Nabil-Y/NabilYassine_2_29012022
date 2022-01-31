@@ -19,6 +19,7 @@
     --primary-color-light: #DEEBFF;
     --secondary-color: #F2F2F2;
     --white: #FFFFFF;
+    --shadow: 0 0 20px rgba(0,0,0,0.1);
 }
 
 /* 2 - HTML et body */
@@ -34,6 +35,7 @@ box-sizing: inherit;
 body {
     font-family: "Raleway", sans-serif;
     margin: auto 3%;
+    -webkit-tap-highlight-color: transparent;
 }
 
 /* 3 - Balises générales */
@@ -47,8 +49,11 @@ a {
     display: block;
     color: inherit;
     text-decoration: none;
-    padding: 50px 20px;
-    text-align: center;
+}
+
+a:hover h3,
+a:hover h4 {
+    color: var(--primary-color);
 }
 
 nav {
@@ -73,6 +78,8 @@ header img {
 
 header a {
     border-top: 3px solid transparent;
+    padding: 50px 20px;
+    text-align: center;
 }
 
 header a:hover,
@@ -95,7 +102,7 @@ header a:focus {
 form {
     display: flex;
     font-weight: bold;
-    margin: 24px 0;
+    margin: 20px 0;
 }
 
 .search-bar {
@@ -200,6 +207,119 @@ form button:hover {
 
 /* 6 - Section: Hébérgement */
 
+#hebergements {
+    display: flex;
+}
+
+.hebergements-principal {
+    background: var(--secondary-color);
+    width: 67%;
+    border-radius: 20px;
+    padding: 30px;
+    margin-right:40px;
+}
+
+#hebergements aside {
+    background: var(--secondary-color);
+    width: 33%;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+#hebergements img {
+    object-fit: cover;
+}
+
+.cartes-principal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.carte {
+    background: var(--white);
+    border-radius: 20px;
+    width: 31%;
+    padding: 5px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.carte img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 100px;
+    width: 100%;
+}
+
+.carte h4,
+.carte p {
+    margin: 5px 10px;
+}
+
+.carte p {
+    font-size: 14px;
+}
+
+.span-bold {
+    font-weight: bold;
+}
+
+.span-primary {
+    color: var(--primary-color);
+}
+
+.span-secondary {
+    color: var(--secondary-color);
+}
+
+aside :last-child {
+    margin-bottom: 0;
+}
+
+.aside-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.aside-carte {
+    background: var(--white);
+    border-radius: 20px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.aside-carte a {
+    display: flex;
+}
+
+.aside-carte img {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    width: 33%;
+}
+
+.aside-carte h4,
+.aside-carte p {
+    margin: 5px 0;
+}
+
+.aside-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left: 20px;
+    width: 67%;
+}
+
+.stars i {
+    display: inline-block;    
+}
+
 
 /* 7 - Section: Activités */
 
@@ -209,11 +329,46 @@ form button:hover {
 
 /* 9 - Media Queries */
 
-/* Tablet */
+/* Tablette */
 
-/* @media screen and (max-width:768px) {
+@media screen and (max-width:992px) {
     
-} */
+    /* Tablette - Section: Hébérgement */
+
+    .hebergements-principal {
+        padding: 16px;
+    }
+    
+    #hebergements aside {
+        padding: 16px;
+    }
+    
+    #hebergements p {
+        font-size: 14px;
+    }
+
+    .carte {
+        width: 45%;
+    }
+
+    .aside-carte a {
+        flex-direction: column;
+    }
+
+    .aside-right {
+        width: 100%;
+        padding: 5px 10px;
+    }
+
+    .aside-carte img {
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        height: 100px;
+        width: 100%;
+    }
+
+}
 
 /* Mobile */
 
@@ -281,6 +436,43 @@ form button:hover {
 
     .filtre {
         margin: 8px;
+    }
+
+    /* Mobile - Section: Hébérgement */
+
+    #hebergements {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .hebergements-principal {
+        order: 2;
+        width: 100%;
+        background: var(--white);
+    }
+
+    #hebergements aside {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .carte {
+        width: 100%;
+    }
+
+    .aside-carte a {
+        flex-direction: row;
+    }
+
+    .aside-right {
+        width: 67%;
+    }
+
+    .aside-carte img {
+        border-radius: 0;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        width: 33%;
     }
 
 }
